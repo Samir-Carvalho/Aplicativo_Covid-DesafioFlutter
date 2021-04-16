@@ -12,7 +12,13 @@ class AppCovidSC extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      //home: HomePage(),
+      initialRoute: '/home_page',
+      routes: {
+        '/home_page': (context) => HomePage(),
+        //'/page_navegacao2': (context) => SecondPage(),
+        //'/page_navegacao3': (context) => PageNavegacao3(),
+      },
     );
 
     /*return MaterialApp(     

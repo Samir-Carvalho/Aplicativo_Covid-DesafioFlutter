@@ -1,4 +1,7 @@
 import 'package:app_covid_samir/model/model_api.dart';
+
+import 'package:app_covid_samir/pages/continent_details_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class WidgetListHome extends StatelessWidget {
@@ -17,6 +20,14 @@ class WidgetListHome extends StatelessWidget {
 
     final int population = model.Population();
     return ListTile(
+      onTap: () {
+        Navigator.of(context).push(CupertinoPageRoute<void>(
+          title: (model.continent), //titulo da proxima pagina
+          builder: (context) => SecondPage(
+            model: model,
+          ),
+        ));
+      },
       title: Text(model.continent),
       subtitle: Text('$population paises'),
       leading: Icon(
@@ -26,6 +37,7 @@ class WidgetListHome extends StatelessWidget {
         size: 30,
         //color: model.completed ? Colors.green : Colors.red,
       ),
+      trailing: const Icon(Icons.dashboard),
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ToModel {
+class ModelCountrie {
   int updated;
+  String country;
   int cases;
   int todayCases;
   int deaths;
@@ -10,19 +11,22 @@ class ToModel {
   int todayRecovered;
   int active;
   int critical;
-  double casesPerOneMillion;
-  double deathsPerOneMillion;
+  int casesPerOneMillion;
+  int deathsPerOneMillion;
   int tests;
-  double testsPerOneMillion;
+  int testsPerOneMillion;
   int population;
   String continent;
+  int oneCasePerPeople;
+  int oneDeathPerPeople;
+  int oneTestPerPeople;
   double activePerOneMillion;
   double recoveredPerOneMillion;
   double criticalPerOneMillion;
-  List<dynamic> countries;
 
-  ToModel(
+  ModelCountrie(
       {@required this.updated,
+      @required this.country,
       @required this.cases,
       @required this.todayCases,
       @required this.deaths,
@@ -37,38 +41,44 @@ class ToModel {
       @required this.testsPerOneMillion,
       @required this.population,
       @required this.continent,
+      @required this.oneCasePerPeople,
+      @required this.oneDeathPerPeople,
+      @required this.oneTestPerPeople,
       @required this.activePerOneMillion,
       @required this.recoveredPerOneMillion,
-      @required this.criticalPerOneMillion,
-      @required this.countries});
+      @required this.criticalPerOneMillion});
 
   Map<String, dynamic> toMap() {
     return {
-      'updated': updated,
-      'cases': cases,
-      'todayCases': todayCases,
-      'deaths': deaths,
-      'todayDeaths': todayDeaths,
-      'recovered': recovered,
-      'todayRecovered': todayRecovered,
-      'active': active,
-      'critical': critical,
-      'casesPerOneMillion': casesPerOneMillion,
-      'deathsPerOneMillion': deathsPerOneMillion,
-      'tests': tests,
-      'testsPerOneMillion': testsPerOneMillion,
-      'population': population,
-      'continent': continent,
-      'activePerOneMillion': activePerOneMillion,
-      'recoveredPerOneMillion': recoveredPerOneMillion,
-      'criticalPerOneMillion': criticalPerOneMillion,
-      'countries': countries,
+      'updated': this.updated,
+      'country': this.country,
+      'cases': this.cases,
+      'todayCases': this.todayCases,
+      'deaths': this.deaths,
+      'todayDeaths': this.todayDeaths,
+      'recovered': this.recovered,
+      'todayRecovered': this.todayRecovered,
+      'active': this.active,
+      'critical': this.critical,
+      'casesPerOneMillion': this.casesPerOneMillion,
+      'deathsPerOneMillion': this.deathsPerOneMillion,
+      'tests': this.tests,
+      'testsPerOneMillion': this.testsPerOneMillion,
+      'population': this.population,
+      'continent': this.continent,
+      'oneCasePerPeople': this.oneCasePerPeople,
+      'oneDeathPerPeople': this.oneDeathPerPeople,
+      'oneTestPerPeople': this.oneTestPerPeople,
+      'activePerOneMillion': this.activePerOneMillion,
+      'recoveredPerOneMillion': this.recoveredPerOneMillion,
+      'criticalPerOneMillion': this.criticalPerOneMillion,
     };
   }
 
-  factory ToModel.fromMap(Map<String, dynamic> map) {
-    return ToModel(
+  factory ModelCountrie.fromMap(Map<String, dynamic> map) {
+    return ModelCountrie(
       updated: map['updated'],
+      country: map['country'],
       cases: map['cases'],
       todayCases: map['todayCases'],
       deaths: map['deaths'],
@@ -83,19 +93,12 @@ class ToModel {
       testsPerOneMillion: map['testsPerOneMillion'],
       population: map['population'],
       continent: map['continent'],
+      oneCasePerPeople: map['oneCasePerPeople'],
+      oneDeathPerPeople: map['oneDeathPerPeople'],
+      oneTestPerPeople: map['oneTestPerPeople'],
       activePerOneMillion: map['activePerOneMillion'],
       recoveredPerOneMillion: map['recoveredPerOneMillion'],
       criticalPerOneMillion: map['criticalPerOneMillion'],
-      countries: map['countries'],
     );
   }
-
-  int Population() {
-    return this.countries.length;
-  }
-
-  //String toJson() => json.encode(toMap());
-
-//  factory ToModel.fromJson(String source) =>
-  //    ToModel.fromMap(json.decode(source));
 }

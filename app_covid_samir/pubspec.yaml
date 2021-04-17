@@ -25,3 +25,10 @@ flutter:
   assets:
     - assets/logo/MaskGroup215.png
     - assets/logo/MaskGroup216.png
+    - assets/images/SmallArrowFw.png
+    - assets/images/Asia.png
+    - assets/images/Africa.png
+    - assets/images/AustraliaOceania.png
+    - assets/images/Europe.png
+    - assets/images/North America.png
+    - assets/images/South America.png

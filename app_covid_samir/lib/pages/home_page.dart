@@ -1,4 +1,4 @@
-import 'package:app_covid_samir/request_api/get_request_api.dart';
+import 'package:app_covid_samir/request_api/get_request_api_continent.dart';
 import 'package:app_covid_samir/widgets/widget_list_home.dart';
 import 'package:flutter/material.dart';
 

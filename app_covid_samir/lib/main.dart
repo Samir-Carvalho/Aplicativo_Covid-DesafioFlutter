@@ -1,3 +1,4 @@
+import 'package:app_covid_samir/pages/countries_details_page.dart';
 import 'package:app_covid_samir/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class AppCovidSC extends StatelessWidget {
       initialRoute: '/home_page',
       routes: {
         '/home_page': (context) => HomePage(),
-        //'/page_navegacao2': (context) => SecondPage(),
+        '/countries_details': (context) => ContriesDatailsPage(),
         //'/page_navegacao3': (context) => PageNavegacao3(),
       },
     );

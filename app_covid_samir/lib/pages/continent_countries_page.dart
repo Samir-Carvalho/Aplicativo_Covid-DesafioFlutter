@@ -53,7 +53,7 @@ class ListCountriePage extends StatelessWidget {
     int sizcountries = model.countries.length;
 
     print(model.countries);
-    print(sizcountries);
+    //print(sizcountries);
     int numItems = sizcountries - 1;
     const _biggerFont = TextStyle(fontSize: 18.0);
 
@@ -64,8 +64,9 @@ class ListCountriePage extends StatelessWidget {
           //arguments: 'Argumento salvo da pagina 1');
           Navigator.pushNamed(
             context,
-            '/countries_details',
-            arguments: model.countries[idx],
+            // '/countries_request',
+            '/test',
+            //arguments: model.countries[idx],
           );
 
           //Navigator.of(context,).push(CupertinoPageRoute<void>(

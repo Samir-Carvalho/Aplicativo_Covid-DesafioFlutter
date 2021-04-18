@@ -1,7 +1,7 @@
 import 'package:app_covid_samir/model/model_api.dart';
 
 import 'package:app_covid_samir/pages/continent_countries_page.dart';
-import 'package:app_covid_samir/pages/continent_details_page.dart';
+//import 'package:app_covid_samir/pages/continent_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +20,7 @@ class WidgetListHome extends StatelessWidget {
     // }
 
     final int population = model.Population();
+
     print(model.continent);
     return Card(
       child: ListTile(

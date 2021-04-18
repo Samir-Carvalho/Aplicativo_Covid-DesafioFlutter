@@ -11,15 +11,15 @@ class ModelCountrie {
   int todayRecovered;
   int active;
   int critical;
-  int casesPerOneMillion;
-  int deathsPerOneMillion;
+  double casesPerOneMillion;
+  double deathsPerOneMillion;
   int tests;
-  int testsPerOneMillion;
+  double testsPerOneMillion;
   int population;
   String continent;
-  int oneCasePerPeople;
-  int oneDeathPerPeople;
-  int oneTestPerPeople;
+  double oneCasePerPeople;
+  double oneDeathPerPeople;
+  double oneTestPerPeople;
   double activePerOneMillion;
   double recoveredPerOneMillion;
   double criticalPerOneMillion;
@@ -49,6 +49,7 @@ class ModelCountrie {
       @required this.criticalPerOneMillion});
 
   Map<String, dynamic> toMap() {
+    print('entrou no Map');
     return {
       'updated': this.updated,
       'country': this.country,
@@ -76,6 +77,7 @@ class ModelCountrie {
   }
 
   factory ModelCountrie.fromMap(Map<String, dynamic> map) {
+    print('entrou no factory to model');
     return ModelCountrie(
       updated: map['updated'],
       country: map['country'],

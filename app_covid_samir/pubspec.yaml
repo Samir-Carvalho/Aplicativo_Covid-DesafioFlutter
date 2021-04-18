@@ -14,6 +14,7 @@ dependencies:
   
   cupertino_icons: ^1.0.2
   dio: ^4.0.0
+  http: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -28,7 +29,7 @@ flutter:
     - assets/images/SmallArrowFw.png
     - assets/images/Asia.png
     - assets/images/Africa.png
-    - assets/images/AustraliaOceania.png
+    - assets/images/Australia/Oceania.png
     - assets/images/Europe.png
     - assets/images/North America.png
     - assets/images/South America.png

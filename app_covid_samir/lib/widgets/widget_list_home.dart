@@ -1,6 +1,7 @@
 import 'package:app_covid_samir/model/model_api.dart';
 
 import 'package:app_covid_samir/pages/continent_countries_page.dart';
+import 'package:app_covid_samir/pages/continent_details_page.dart';
 //import 'package:app_covid_samir/pages/continent_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class WidgetListHome extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(CupertinoPageRoute<void>(
             title: (model.continent), //titulo da proxima pagina
-            builder: (context) => ContinentCountriesPage(
+            builder: (context) => ContinentDetailsPage(
               //ListCountriePage(
               model: model,
             ),
@@ -40,12 +41,18 @@ class WidgetListHome extends StatelessWidget {
         ),
         title: Text(
           model.continent,
-          style: TextStyle(fontSize: 13.0),
+          style: TextStyle(
+            fontSize: 13.0,
+            fontFamily: 'Ubuntu-Regular',
+          ),
         ),
 
         subtitle: Text(
           '$population paises',
-          style: TextStyle(fontSize: 12.0),
+          style: TextStyle(
+            fontSize: 12.0,
+            fontFamily: 'Ubuntu-Regular',
+          ),
         ),
 
         leading: Image.asset(
@@ -56,6 +63,7 @@ class WidgetListHome extends StatelessWidget {
 
           'assets/images/' + model.continent + '.png', //Asia2.png',
           width: 44,
+
           //size: 30,
           //color: model.completed ? Colors.green : Colors.red,
         ),

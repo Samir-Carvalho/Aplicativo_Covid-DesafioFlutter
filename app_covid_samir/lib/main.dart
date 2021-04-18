@@ -14,8 +14,12 @@ class AppCovidSC extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primaryColor: Color(0xFfffffff), //#FBFBFD 0xff000000
+          textTheme: TextTheme(
+              // bodyText1: TextStyle(color: Colors.black, fontFamily: 'Ubuntu'),
+              // bodyText2: TextStyle(color: Colors.black, fontFamily: 'Ubuntu'),
+              )),
+
       //home: HomePage(),
       initialRoute: '/home_page',
       routes: {
@@ -23,7 +27,7 @@ class AppCovidSC extends StatelessWidget {
         '/countries_details': (context) => ContriesDatailsPage(),
         '/countries_request': (context) => CountriesRequest(),
         //'/page_navegacao3': (context) => PageNavegacao3(),
-        '/test': (context) => MyApp(),
+        '/test': (context) => ContriessPage(),
       },
     );
 

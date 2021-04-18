@@ -15,6 +15,12 @@ class HomePage extends StatelessWidget {
           title: Center(
             child: Text(
               'Covid-19',
+              style: TextStyle(
+                fontFamily: 'Ubuntu-Bold',
+                fontSize: 16,
+                color: Colors.black,
+                //color: new Color(Colors.black),
+              ),
             ),
           )),
       body: FutureBuilder<List<ToModel>>(

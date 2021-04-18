@@ -5,13 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Post> fetchPost() async {
-  //final response =
-  //  await http.get('https://jsonplaceholder.typicode.com/posts/2');
-  //
   String country = 'Brazil';
-  print('entrou no future');
-  await Future.delayed(Duration(seconds: 5));
-  final url = Uri.parse('https://disease.sh/v3/covid-19/countries/Brazil');
+
+  await Future.delayed(Duration(seconds: 1));
+  final url = Uri.parse('https://disease.sh/v3/covid-19/countries/' + country);
   http.Response response = await http.get(url);
 
   if (response.statusCode == 200) {
@@ -39,7 +36,16 @@ class Post {
   }
 }
 
-void main() => runApp(MyApp(post: fetchPost()));
+class ContriessPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //MyApp(post: fetchPost());
+    return Scaffold(
+      appBar: AppBar(title: Text('model.continent')),
+      body: MyApp(post: fetchPost()),
+    );
+  }
+}
 
 class MyApp extends StatelessWidget {
   final Future<Post> post;
@@ -49,37 +55,27 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('entrou no bild my app');
-    return MaterialApp(
-      title: 'Obtendo dados da Web - Exemplo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Pegando dados da Web'),
-        ),
-        body: Center(
-          child: FutureBuilder<Post>(
-            future: post,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                print('if s');
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Id :' +
-                      snapshot.data.id.toString() +
-                      '\n\ntitle : ' +
-                      snapshot.data.title +
-                      '\n\nbody : ' +
-                      snapshot.data.body),
-                );
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
-              // By default, show a loading spinner
-              return CircularProgressIndicator();
-            },
-          ),
+    return Scaffold(
+      body: Center(
+        child: FutureBuilder<Post>(
+          future: post,
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              print('if s');
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Id :' +
+                    snapshot.data.id.toString() +
+                    '\n\ntitle : ' +
+                    snapshot.data.title +
+                    '\n\nbody : ' +
+                    snapshot.data.body),
+              );
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+            return CircularProgressIndicator();
+          },
         ),
       ),
     );

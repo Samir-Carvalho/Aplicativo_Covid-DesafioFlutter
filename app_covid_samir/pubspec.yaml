@@ -33,3 +33,20 @@ flutter:
     - assets/images/Europe.png
     - assets/images/North America.png
     - assets/images/South America.png
+
+
+  fonts:
+    - family: Ubuntu-Bold
+      fonts:
+        - asset: assets/fonts/Ubuntu-Bold.ttf
+
+    - family: Ubuntu-Medium
+      fonts:
+        - asset: assets/fonts/Ubuntu-Medium.ttf
+    
+    - family: Ubuntu-Regular
+      fonts:
+        - asset: assets/fonts/Ubuntu-Regular.ttf
+      
+        
+

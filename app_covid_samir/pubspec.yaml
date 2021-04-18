@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   
   cupertino_icons: ^1.0.2
+  dio: ^4.0.0
+  http: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +25,28 @@ flutter:
   uses-material-design: true
   assets:
     - assets/logo/MaskGroup215.png
+    - assets/logo/MaskGroup216.png
+    - assets/images/SmallArrowFw.png
+    - assets/images/Asia.png
+    - assets/images/Africa.png
+    - assets/images/Australia/Oceania.png
+    - assets/images/Europe.png
+    - assets/images/North America.png
+    - assets/images/South America.png
+
+
+  fonts:
+    - family: Ubuntu-Bold
+      fonts:
+        - asset: assets/fonts/Ubuntu-Bold.ttf
+
+    - family: Ubuntu-Medium
+      fonts:
+        - asset: assets/fonts/Ubuntu-Medium.ttf
+    
+    - family: Ubuntu-Regular
+      fonts:
+        - asset: assets/fonts/Ubuntu-Regular.ttf
+      
+        
+

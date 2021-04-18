@@ -1,9 +1,6 @@
-import 'package:app_covid_samir/pages/countries_details_page.dart';
 import 'package:app_covid_samir/pages/home_page.dart';
-import 'package:app_covid_samir/widgets/test.dart';
+import 'package:app_covid_samir/widgets/countries_details_page.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/countries_request.dart';
 
 void main() {
   runApp(AppCovidSC());
@@ -19,15 +16,11 @@ class AppCovidSC extends StatelessWidget {
               // bodyText1: TextStyle(color: Colors.black, fontFamily: 'Ubuntu'),
               // bodyText2: TextStyle(color: Colors.black, fontFamily: 'Ubuntu'),
               )),
-
-      //home: HomePage(),
       initialRoute: '/home_page',
       routes: {
         '/home_page': (context) => HomePage(),
-        '/countries_details': (context) => ContriesDatailsPage(),
-        '/countries_request': (context) => CountriesRequest(),
+        // '/countries_datails': (context) => CountriesDetailsPage(),
         //'/page_navegacao3': (context) => PageNavegacao3(),
-        '/test': (context) => ContriessPage(),
       },
     );
 

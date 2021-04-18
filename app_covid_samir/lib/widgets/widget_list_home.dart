@@ -28,8 +28,9 @@ class WidgetListHome extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(CupertinoPageRoute<void>(
             title: (model.continent), //titulo da proxima pagina
-            builder: (context) => ContinentDetailsPage(
-              //ListCountriePage(
+            builder: (context) => //ContinentCountriesPage(
+                ContinentDetailsPage(
+              //ContinentCountriesPage(
               model: model,
             ),
           ));

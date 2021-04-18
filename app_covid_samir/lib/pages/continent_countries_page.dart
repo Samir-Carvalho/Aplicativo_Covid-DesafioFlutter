@@ -25,7 +25,7 @@ class ContinentCountriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print(model.countries);
+    print(model.countries);
     //return CupertinoPageScaffold(
     //navigationBar: const CupertinoNavigationBar(),
 
@@ -36,7 +36,7 @@ class ContinentCountriesPage extends StatelessWidget {
       appBar: AppBar(
           title: Text(model.continent,
               style: TextStyle(
-                fontFamily: 'Ubuntu',
+                fontFamily: 'Ubuntu-Bold',
                 fontSize: 16,
               ))),
 
@@ -57,29 +57,18 @@ class ListCountriePage extends StatelessWidget {
   Widget build(BuildContext context) {
     int sizcountries = model.countries.length;
 
-    print(model.countries);
+    //print(model.countries);
     //print(sizcountries);
     int numItems = sizcountries - 1;
 
     Widget _buildRow(int idx) {
       return ListTile(
         onTap: () {
-          //Navigator.pushNamed(context, '/page_navegacao2',
-          //arguments: 'Argumento salvo da pagina 1');
           Navigator.pushNamed(
             context,
-            // '/countries_request',
-            '/test',
-            //arguments: model.countries[idx],
+            '/countries_datails',
+            arguments: model.countries[idx],
           );
-
-          //Navigator.of(context,).push(CupertinoPageRoute<void>(
-          //  title: (model.countries[idx]), //titulo da proxima pagina
-          //  builder : (context) => ContriesDatailsPage(
-          //    model: model.countries[idx],
-          //  ),
-          //)
-          // );
         },
         title: Text(model.countries[idx],
             style: TextStyle(

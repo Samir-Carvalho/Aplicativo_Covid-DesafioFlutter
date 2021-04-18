@@ -1,13 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:app_covid_samir/model/model_api.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-Future<Post> fetchPost() async {
-  String country = 'Brazil';
-
-  await Future.delayed(Duration(seconds: 1));
+Future<Post> fetchPost(String country) async {
   final url = Uri.parse('https://disease.sh/v3/covid-19/countries/' + country);
   http.Response response = await http.get(url);
 
@@ -36,13 +35,27 @@ class Post {
   }
 }
 
-class ContriessPage extends StatelessWidget {
+class CountriesDetailsPage extends StatelessWidget {
+  final ToModel tomodel;
+  final String country;
+
+  const CountriesDetailsPage(
+      {Key key, @required this.tomodel, @required this.country})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     //MyApp(post: fetchPost());
+    //final String country = ModalRoute.of(context).settings.arguments ?? '';
+    //String country = 'Brazil';
+    print(country);
     return Scaffold(
-      appBar: AppBar(title: Text('model.continent')),
-      body: MyApp(post: fetchPost()),
+      appBar: AppBar(
+          title: Text(country,
+              style: TextStyle(
+                fontFamily: 'Ubuntu-Bold',
+                fontSize: 16,
+              ))),
+      body: MyApp(post: fetchPost(country)),
     );
   }
 }

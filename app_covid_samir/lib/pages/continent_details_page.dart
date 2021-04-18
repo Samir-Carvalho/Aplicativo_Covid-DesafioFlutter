@@ -1,4 +1,5 @@
 import 'package:app_covid_samir/model/model_api.dart';
+import 'package:app_covid_samir/widgets/countries_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,12 @@ class ContinentDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(model.continent)),
+      appBar: AppBar(
+          title: Text(model.continent,
+              style: TextStyle(
+                fontFamily: 'Ubuntu-Bold',
+                fontSize: 16,
+              ))),
       //body: ContinentDetailsWidget(model: model),
       //body: ContinentDetailsWidget(model: model),
       body: TabBarClass(model: model),
@@ -111,6 +117,8 @@ class TabBarClass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int sizcountries = model.countries.length;
+    int numItems = sizcountries - 1;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -204,12 +212,53 @@ class TabBarClass extends StatelessWidget {
                 ),
               ),
 
-              /////////// container paises
-              Container(child: Center(child: Text("Some boots"))),
+              Container(
+                child: ListeeCountriePage(model: model),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class ListeeCountriePage extends StatelessWidget {
+  final ToModel model;
+  const ListeeCountriePage({Key key, @required this.model}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    int sizcountries = model.countries.length;
+
+    int numItems = sizcountries - 1;
+
+    Widget _buildRow(int idx) {
+      return ListTile(
+        onTap: () {
+          Navigator.of(context).push(CupertinoPageRoute<void>(
+            //title: (model.countries[idx]), //titulo da proxima pagina
+            builder: (context) => //ContinentCountriesPage(
+                CountriesDetailsPage(
+                    tomodel: model, country: model.countries[idx]),
+          ));
+        },
+        title: Text(model.countries[idx],
+            style: TextStyle(
+              fontFamily: 'Ubuntu-Regular',
+              fontSize: 15.0,
+            )),
+        trailing: Image.asset('assets/images/SmallArrowFw.png'),
+      );
+    }
+
+    return ListView.builder(
+      itemCount: numItems * 2,
+      itemBuilder: (BuildContext context, int i) {
+        if (i.isOdd) return const Divider();
+        final index = i ~/ 2 + 1;
+        return _buildRow(index);
+      },
     );
   }
 }

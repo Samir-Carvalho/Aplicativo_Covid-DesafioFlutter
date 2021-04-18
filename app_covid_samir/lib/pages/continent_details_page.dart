@@ -3,8 +3,6 @@ import 'package:app_covid_samir/widgets/countries_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'continent_countries_page.dart';
-
 class ContinentDetailsPage extends StatelessWidget {
   final ToModel model;
   const ContinentDetailsPage({Key key, @required this.model}) : super(key: key);
@@ -34,15 +32,14 @@ class ContinentDetailsWidget extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
+          color: Color(0XFFECEFF1),
           child: Column(
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-              ),
               Card(
                 color: Colors.green,
+                elevation: 12,
                 child: Container(
-                  padding: EdgeInsets.all(22.0),
+                  padding: EdgeInsets.all(200.0),
                   child: Column(
                     children: <Widget>[
                       Text('Total'),
@@ -64,7 +61,7 @@ class ContinentDetailsWidget extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 1.0, bottom: 1.0),
+                padding: EdgeInsets.only(top: 100.0, bottom: 1.0),
               ),
               Card(
                 color: Colors.orange,

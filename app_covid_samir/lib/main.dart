@@ -1,5 +1,4 @@
 import 'package:app_covid_samir/pages/home_page.dart';
-import 'package:app_covid_samir/widgets/countries_details_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

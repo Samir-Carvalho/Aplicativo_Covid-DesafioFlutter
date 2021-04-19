@@ -1,9 +1,9 @@
 class Post {
   final int cases;
-  final double active;
-  final double recovered;
-  final double deaths;
-  final double population;
+  final int active;
+  final int recovered;
+  final int deaths;
+  final int population;
   final String country;
   final String continent;
   final CountryInfo countryInfo;
@@ -34,17 +34,20 @@ class Post {
   }
 
   double percentageActive() {
-    double val = (this.active * 100) / this.cases;
+    int ac = (this.active * 100);
+    double val = ac / this.cases;
     return val;
   }
 
   double percentagerecovered() {
-    double val = (this.recovered * 100) / this.cases;
+    int rec = this.recovered * 100;
+    double val = rec / this.cases;
     return val;
   }
 
   double percentagedeaths() {
-    double val = (this.deaths * 100) / this.cases;
+    int dead = this.deaths * 100;
+    double val = dead / this.cases;
     return val;
   }
 }

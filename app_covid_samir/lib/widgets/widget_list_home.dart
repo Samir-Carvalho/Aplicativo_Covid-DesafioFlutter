@@ -12,7 +12,7 @@ class WidgetListHome extends StatelessWidget {
   Widget build(BuildContext context) {
     final int population = model.Population();
 
-    print(model.continent);
+    //print(model.continent);
 
     return Card(
       elevation: 12,

@@ -14,21 +14,25 @@ class ListCountriePage extends StatelessWidget {
     int numItems = sizcountries - 1;
 
     Widget _buildRow(int idx) {
-      return ListTile(
-        onTap: () {
-          Navigator.of(context).push(CupertinoPageRoute<void>(
-            //title: (model.countries[idx]), //titulo da proxima pagina
-            builder: (context) => //ContinentCountriesPage(
-                CountriesDetailsPage(
-                    tomodel: model, country: model.countries[idx]),
-          ));
-        },
-        title: Text(model.countries[idx],
-            style: TextStyle(
-              fontFamily: 'Ubuntu-Regular',
-              fontSize: 15.0,
-            )),
-        trailing: Image.asset('assets/images/SmallArrowFw.png'),
+      return Card(
+        elevation: 12,
+        margin: EdgeInsets.only(left: 16, right: 20, bottom: 4, top: 8),
+        child: ListTile(
+          onTap: () {
+            Navigator.of(context).push(CupertinoPageRoute<void>(
+              //title: (model.countries[idx]), //titulo da proxima pagina
+              builder: (context) => //ContinentCountriesPage(
+                  CountriesDetailsPage(
+                      tomodel: model, country: model.countries[idx]),
+            ));
+          },
+          title: Text(model.countries[idx],
+              style: TextStyle(
+                fontFamily: 'Ubuntu-Regular',
+                fontSize: 15.0,
+              )),
+          trailing: Image.asset('assets/images/SmallArrowFw.png'),
+        ),
       );
     }
 

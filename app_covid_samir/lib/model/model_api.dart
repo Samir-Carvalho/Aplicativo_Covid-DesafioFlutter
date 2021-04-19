@@ -7,12 +7,13 @@ class ToModel {
   int todayDeaths;
   int recovered;
   int todayRecovered;
-  double active;
+  //double active;
+  int active;
   double casesPerOneMillion;
   double deathsPerOneMillion;
   int tests;
   double testsPerOneMillion;
-  double population;
+  int population;
   String continent;
   double activePerOneMillion;
   double recoveredPerOneMillion;
@@ -87,7 +88,8 @@ class ToModel {
   }
 
   double percentageActive() {
-    double val = (this.active * 100) / this.cases;
+    int ac = active * 100;
+    double val = ac / this.cases;
     return val;
   }
 

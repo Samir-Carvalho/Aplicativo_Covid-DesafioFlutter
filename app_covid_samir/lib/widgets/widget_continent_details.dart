@@ -264,7 +264,7 @@ class ContinentDetailsWidget extends StatelessWidget {
                               child: Row(
                         children: [
                           Text(
-                            model.cases.toString() + '%',
+                            model.cases.toString(),
                             style: TextStyle(
                               fontSize: 16.0,
                               color: Colors.blue,
@@ -275,7 +275,7 @@ class ContinentDetailsWidget extends StatelessWidget {
                             width: 37,
                           ),
                           Text(
-                            model.population.toStringAsFixed(2),
+                            model.population.toString(),
                             style: TextStyle(
                               fontSize: 16.0,
                               fontFamily: 'Ubuntu-Bold',

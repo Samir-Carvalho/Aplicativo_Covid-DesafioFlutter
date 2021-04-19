@@ -1,27 +1,7 @@
 import 'package:app_covid_samir/model/model_api.dart';
+import 'package:app_covid_samir/pages/country_details_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-class ContinentCountriesPage extends StatelessWidget {
-  final ToModel model;
-  const ContinentCountriesPage({Key key, @required this.model})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    print(model.countries);
-
-    return Scaffold(
-      appBar: AppBar(
-          title: Text(model.continent,
-              style: TextStyle(
-                fontFamily: 'Ubuntu-Bold',
-                fontSize: 16,
-              ))),
-      body: ListCountriePage(model: model),
-    );
-  }
-}
 
 class ListCountriePage extends StatelessWidget {
   final ToModel model;
@@ -36,11 +16,12 @@ class ListCountriePage extends StatelessWidget {
     Widget _buildRow(int idx) {
       return ListTile(
         onTap: () {
-          Navigator.pushNamed(
-            context,
-            '/countries_datails',
-            arguments: model.countries[idx],
-          );
+          Navigator.of(context).push(CupertinoPageRoute<void>(
+            //title: (model.countries[idx]), //titulo da proxima pagina
+            builder: (context) => //ContinentCountriesPage(
+                CountriesDetailsPage(
+                    tomodel: model, country: model.countries[idx]),
+          ));
         },
         title: Text(model.countries[idx],
             style: TextStyle(

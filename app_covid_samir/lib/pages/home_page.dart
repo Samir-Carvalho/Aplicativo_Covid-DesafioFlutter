@@ -19,7 +19,6 @@ class HomePage extends StatelessWidget {
                 fontFamily: 'Ubuntu-Bold',
                 fontSize: 16,
                 color: Colors.black,
-                //color: new Color(Colors.black),
               ),
             ),
           )),

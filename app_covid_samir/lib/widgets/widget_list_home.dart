@@ -17,10 +17,6 @@ class WidgetListHome extends StatelessWidget {
     return Card(
       elevation: 12,
       margin: EdgeInsets.only(left: 16, right: 20, bottom: 4, top: 8),
-      //color: Colors.grey,   //0xFFF5F5F5 ou //  0XFFECEFF1
-      //Color(0xFFFAFAFA)
-      //////0xFFFAFAFA
-
       child: ListTile(
         onTap: () {
           Navigator.of(context).push(CupertinoPageRoute<void>(
@@ -49,7 +45,7 @@ class WidgetListHome extends StatelessWidget {
           ),
         ),
         leading: Image.asset(
-          'assets/images/' + model.continent + '.png', //Asia2.png',
+          'assets/images/' + model.continent + '.png',
           width: 44,
         ),
         trailing: Image.asset('assets/images/SmallArrowFw.png'),
@@ -57,4 +53,3 @@ class WidgetListHome extends StatelessWidget {
     );
   }
 }
-//

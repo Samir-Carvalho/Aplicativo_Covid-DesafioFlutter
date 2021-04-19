@@ -1,106 +1,66 @@
-import 'package:flutter/material.dart';
+class Post {
+  final int cases;
+  final double active;
+  final double recovered;
+  final double deaths;
+  final double population;
+  final String country;
+  final String continent;
+  final CountryInfo countryInfo;
 
-class ModelCountrie {
-  int updated;
-  String country;
-  int cases;
-  int todayCases;
-  int deaths;
-  int todayDeaths;
-  int recovered;
-  int todayRecovered;
-  int active;
-  int critical;
-  double casesPerOneMillion;
-  double deathsPerOneMillion;
-  int tests;
-  double testsPerOneMillion;
-  int population;
-  String continent;
-  double oneCasePerPeople;
-  double oneDeathPerPeople;
-  double oneTestPerPeople;
-  double activePerOneMillion;
-  double recoveredPerOneMillion;
-  double criticalPerOneMillion;
+  Post({
+    this.cases,
+    this.country,
+    this.continent,
+    this.countryInfo,
+    this.active,
+    this.recovered,
+    this.deaths,
+    this.population,
+  });
 
-  ModelCountrie(
-      {@required this.updated,
-      @required this.country,
-      @required this.cases,
-      @required this.todayCases,
-      @required this.deaths,
-      @required this.todayDeaths,
-      @required this.recovered,
-      @required this.todayRecovered,
-      @required this.active,
-      @required this.critical,
-      @required this.casesPerOneMillion,
-      @required this.deathsPerOneMillion,
-      @required this.tests,
-      @required this.testsPerOneMillion,
-      @required this.population,
-      @required this.continent,
-      @required this.oneCasePerPeople,
-      @required this.oneDeathPerPeople,
-      @required this.oneTestPerPeople,
-      @required this.activePerOneMillion,
-      @required this.recoveredPerOneMillion,
-      @required this.criticalPerOneMillion});
-
-  Map<String, dynamic> toMap() {
-    print('entrou no Map');
-    return {
-      'updated': this.updated,
-      'country': this.country,
-      'cases': this.cases,
-      'todayCases': this.todayCases,
-      'deaths': this.deaths,
-      'todayDeaths': this.todayDeaths,
-      'recovered': this.recovered,
-      'todayRecovered': this.todayRecovered,
-      'active': this.active,
-      'critical': this.critical,
-      'casesPerOneMillion': this.casesPerOneMillion,
-      'deathsPerOneMillion': this.deathsPerOneMillion,
-      'tests': this.tests,
-      'testsPerOneMillion': this.testsPerOneMillion,
-      'population': this.population,
-      'continent': this.continent,
-      'oneCasePerPeople': this.oneCasePerPeople,
-      'oneDeathPerPeople': this.oneDeathPerPeople,
-      'oneTestPerPeople': this.oneTestPerPeople,
-      'activePerOneMillion': this.activePerOneMillion,
-      'recoveredPerOneMillion': this.recoveredPerOneMillion,
-      'criticalPerOneMillion': this.criticalPerOneMillion,
-    };
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return Post(
+        cases: json['cases'],
+        active: json['active'], //active
+        recovered: json['recovered'],
+        deaths: json['deaths'],
+        population: json['population'],
+        country: json['country'],
+        continent: json['continent'],
+        countryInfo: json['countryInfo'] != null
+            ? new CountryInfo.fromJson(json['countryInfo'])
+            : null);
   }
 
-  factory ModelCountrie.fromMap(Map<String, dynamic> map) {
-    print('entrou no factory to model');
-    return ModelCountrie(
-      updated: map['updated'],
-      country: map['country'],
-      cases: map['cases'],
-      todayCases: map['todayCases'],
-      deaths: map['deaths'],
-      todayDeaths: map['todayDeaths'],
-      recovered: map['recovered'],
-      todayRecovered: map['todayRecovered'],
-      active: map['active'],
-      critical: map['critical'],
-      casesPerOneMillion: map['casesPerOneMillion'],
-      deathsPerOneMillion: map['deathsPerOneMillion'],
-      tests: map['tests'],
-      testsPerOneMillion: map['testsPerOneMillion'],
-      population: map['population'],
-      continent: map['continent'],
-      oneCasePerPeople: map['oneCasePerPeople'],
-      oneDeathPerPeople: map['oneDeathPerPeople'],
-      oneTestPerPeople: map['oneTestPerPeople'],
-      activePerOneMillion: map['activePerOneMillion'],
-      recoveredPerOneMillion: map['recoveredPerOneMillion'],
-      criticalPerOneMillion: map['criticalPerOneMillion'],
-    );
+  double percentageActive() {
+    double val = (this.active * 100) / this.cases;
+    return val;
+  }
+
+  double percentagerecovered() {
+    double val = (this.recovered * 100) / this.cases;
+    return val;
+  }
+
+  double percentagedeaths() {
+    double val = (this.deaths * 100) / this.cases;
+    return val;
+  }
+}
+
+class CountryInfo {
+  String flag;
+
+  CountryInfo({this.flag});
+
+  CountryInfo.fromJson(Map<String, dynamic> json) {
+    flag = json['flag'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['flag'] = this.flag;
+    return data;
   }
 }

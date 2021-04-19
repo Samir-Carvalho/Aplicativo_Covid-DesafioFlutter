@@ -94,8 +94,18 @@ class ToModel {
     return this.countries.length;
   }
 
-  //String toJson() => json.encode(toMap());
+  double percentageActive() {
+    double val = (this.active * 100) / this.cases;
+    return val;
+  }
 
-//  factory ToModel.fromJson(String source) =>
-  //    ToModel.fromMap(json.decode(source));
+  double percentagerecovered() {
+    double val = (this.recovered * 100) / this.cases;
+    return val;
+  }
+
+  double percentagedeaths() {
+    double val = (this.deaths * 100) / this.cases;
+    return val;
+  }
 }

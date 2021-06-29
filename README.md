@@ -1,6 +1,19 @@
 # desafio_samir Squadra
 Desafio App Covid
+<div >
+<img src="https://user-images.githubusercontent.com/55158042/123838924-e7e9cd80-d8e2-11eb-8dcd-36cd7a770853.jpeg" width="200px" />
+  <img src="https://user-images.githubusercontent.com/55158042/123838929-e91afa80-d8e2-11eb-8835-c4529442abf4.jpeg" width="200px " />
+  <img src="https://user-images.githubusercontent.com/55158042/123838933-e9b39100-d8e2-11eb-8636-a6efce795cdc.jpeg" width="200px " />
+  <img src="https://user-images.githubusercontent.com/55158042/123838936-e9b39100-d8e2-11eb-84f4-d80f92435636.jpeg" width="200px " />
+</div>
 
+
+
+
+
+
+
+Descrição:
 Crie um  aplicativo em Flutter onde será exibido informações referentes a COVID-19 em todo o mundo (continentes e países).
 
 Protótipo navegável:
